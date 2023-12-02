@@ -8,6 +8,7 @@ export default {
     BaseButton,
   },
 
+  inject: ['removeResource'],
   props: ['id', 'title', 'description', 'link'],
 };
 </script>
@@ -18,7 +19,9 @@ export default {
       <header>
         <h3>{{ title }}</h3>
 
-        <base-button class="flat">Delete</base-button>
+        <base-button class="flat" @click="removeResource(id)"
+          >Delete</base-button
+        >
       </header>
 
       <p>{{ description }}</p>
